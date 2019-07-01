@@ -3,6 +3,7 @@
 use App\Client;
 use App\Event;
 use App\Note;
+use App\Tasks;
 use App\TimeLog;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -49,6 +50,23 @@ Route::get('/timeLogs', function (Request $request) {
     return TimeLog::all();
 });
 
+Route::get('/tasks', function (Request $request) {
+    return Tasks::all();
+});
+
+Route::get('/task/{id}', function (Request $request) {
+    return Tasks::where('id',$request->id)->first();
+});
+
+Route::post('/saveTask', function (Request $request) {
+    $task        = new Tasks();
+    $task->summary = $request->summary;
+    $task->description = $request->description;
+    $task->save();
+
+    return response(['success' => true], 200);
+});
+
 Route::post('/saveTimeLog', function (Request $request) {
     $start = new Carbon($request->start_at);
     $end   = new Carbon($request->end_at);
@@ -78,6 +96,8 @@ Route::post('/saveEvent', function (Request $request) {
 
     return response(['success' => true], 200);
 });
+
+
 
 Route::post('/login', function (Request $request) {
     if (Auth::guard('web')->attempt(['email' => $request->email, 'password' => $request->password])) {

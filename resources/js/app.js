@@ -11,9 +11,11 @@ Vue.use(Vuetify);
 Vue.use(VueRouter);
 
 Vue.component('topnav',require('./components/Topnav').default);
+Vue.component('v-datetime-picker',require('./components/DateTimePicker').default);
 
 let app = new Vue({
     el: '#app',
     store,
     router: new VueRouter(routes)
 });
+
