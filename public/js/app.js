@@ -3003,6 +3003,7 @@ __webpack_require__.r(__webpack_exports__);
       code: '',
       start_at_date: '',
       start_at_time: '',
+      timeElapse: '0:00',
       search: '',
       start_at: moment__WEBPACK_IMPORTED_MODULE_0___default()().format('YYYY-MM-DD HH:mm:ss'),
       end_at: moment__WEBPACK_IMPORTED_MODULE_0___default()().format('YYYY-MM-DD HH:mm:ss'),
@@ -3055,16 +3056,20 @@ __webpack_require__.r(__webpack_exports__);
     setStopwatchOn: function setStopwatchOn() {
       console.log('setStopwatchOn');
       this.stopWatchOn = true;
-      this.stopwatch = setInterval(this.UpdateEndAtTime, 1000);
+      this.stopwatch = setInterval(this.updateEndAtTime, 1000);
     },
     setStopwatchOff: function setStopwatchOff() {
       console.log('setStopwatchOff');
       this.stopWatchOn = false;
       clearInterval(this.stopwatch);
     },
-    UpdateEndAtTime: function UpdateEndAtTime() {
+    updateEndAtTime: function updateEndAtTime() {
       console.log('UpdateEndAtTime');
       this.end_at = moment__WEBPACK_IMPORTED_MODULE_0___default()().format('YYYY-MM-DD HH:mm:ss');
+      var startAt = moment__WEBPACK_IMPORTED_MODULE_0___default()(this.start_at, "YYYY-MM-DD HH:mm:ss");
+      var endAt = moment__WEBPACK_IMPORTED_MODULE_0___default()(this.end_at, "YYYY-MM-DD HH:mm:ss");
+      var timeElapse = moment__WEBPACK_IMPORTED_MODULE_0___default.a.utc(endAt.diff(startAt)).format("HH:mm");
+      this.timeElapse = timeElapse;
     },
     save: function save(e) {
       console.log('save');
@@ -3080,15 +3085,13 @@ __webpack_require__.r(__webpack_exports__);
         type: 'POST',
         dataType: 'json',
         success: function success(e) {
-          var _this2 = this;
-
           console.log('save - success');
           vm.dialog = false;
           vm.name = '';
-          vm.start_at = '';
-          vm.end_at = '';
+          vm.start_at = vm.end_at;
+          vm.end_at = moment__WEBPACK_IMPORTED_MODULE_0___default()().format('YYYY-MM-DD HH:mm:ss');
           axios.get('/api/timeLogs').then(function (response) {
-            _this2.timelogs = response.data;
+            vm.timelogs = response.data;
           })["catch"](function (error) {
             console.log(error);
           });
@@ -58519,7 +58522,9 @@ var render = function() {
             [
               _c("v-card-title", [
                 _c("span", { staticClass: "headline" }, [
-                  _vm._v("Add Time Log")
+                  _vm._v(
+                    "Add Time Log: " + _vm._s(_vm.timeElapse) + " Time Elapse"
+                  )
                 ])
               ]),
               _vm._v(" "),

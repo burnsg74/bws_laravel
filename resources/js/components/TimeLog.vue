@@ -38,7 +38,7 @@
               max-width="600px">
       <v-card>
         <v-card-title>
-          <span class="headline">Add Time Log</span>
+          <span class="headline">Add Time Log: {{ timeElapse }} Time Elapse</span>
         </v-card-title>
         <v-card-text>
           <v-container grid-list-md>
@@ -105,6 +105,7 @@ export default {
       code: '',
       start_at_date: '',
       start_at_time: '',
+      timeElapse: '0:00',
       search: '',
       start_at: moment().format('YYYY-MM-DD HH:mm:ss'),
       end_at: moment().format('YYYY-MM-DD HH:mm:ss'),
@@ -144,16 +145,21 @@ export default {
     setStopwatchOn () {
       console.log('setStopwatchOn')
       this.stopWatchOn = true
-      this.stopwatch = setInterval(this.UpdateEndAtTime, 1000)
+      this.stopwatch = setInterval(this.updateEndAtTime, 1000)
     },
     setStopwatchOff () {
       console.log('setStopwatchOff')
       this.stopWatchOn = false
       clearInterval(this.stopwatch)
     },
-    UpdateEndAtTime () {
+    updateEndAtTime () {
       console.log('UpdateEndAtTime')
       this.end_at = moment().format('YYYY-MM-DD HH:mm:ss')
+      let startAt = moment(this.start_at,"YYYY-MM-DD HH:mm:ss")
+      let endAt = moment(this.end_at,"YYYY-MM-DD HH:mm:ss")
+      let timeElapse = moment.utc(endAt.diff(startAt)).format("HH:mm")
+
+      this.timeElapse = timeElapse
     },
     save: function (e) {
       console.log('save')
@@ -172,10 +178,10 @@ export default {
           console.log('save - success')
           vm.dialog = false
           vm.name = ''
-          vm.start_at = ''
-          vm.end_at = ''
+          vm.start_at = vm.end_at
+          vm.end_at = moment().format('YYYY-MM-DD HH:mm:ss')
           axios.get('/api/timeLogs').then(response => {
-            this.timelogs = response.data
+            vm.timelogs = response.data
           }).catch(error => {
             console.log(error)
           })

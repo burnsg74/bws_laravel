@@ -75,7 +75,7 @@ Route::post('/saveTimeLog', function (Request $request) {
     $timeLog->name     = $request->name;
     $timeLog->start_at = $start->format('Y-m-d H:i:s');
     $timeLog->end_at   = $end->format('Y-m-d H:i:s');
-    $timeLog->total    = $start->diffInMinutes($end);
+    $timeLog->total    = $start->diff($end)->format('%H:%I:%S');
     $timeLog->save();
 
     $event        = new Event();
