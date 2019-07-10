@@ -13,4 +13,8 @@
 
 Route::get('/{any?}', function () {
     return view('app');
-});
+})->name('login');
+
+Route::get('/portal/{any?}', function () {
+    return view('app');
+})->middleware('auth');

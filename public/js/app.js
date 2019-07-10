@@ -2375,7 +2375,7 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (response) {
         if (response.data.success === true) {
           vue.$store.commit('isLoggedin');
-          vue.$router.push('/member');
+          vue.$router.push('/portal/member');
         }
       })["catch"](function (error) {
         console.log(error);
@@ -56648,7 +56648,10 @@ var render = function() {
             [
               _c(
                 "router-link",
-                { staticClass: "info", attrs: { to: "/member", tag: "v-btn" } },
+                {
+                  staticClass: "info",
+                  attrs: { to: "/portal/member", tag: "v-btn" }
+                },
                 [
                   _c("v-icon", [_vm._v("arrow_left")]),
                   _vm._v("\n        Back\n      ")
@@ -56807,7 +56810,10 @@ var render = function() {
             [
               _c(
                 "router-link",
-                { staticClass: "info", attrs: { to: "/member", tag: "v-btn" } },
+                {
+                  staticClass: "info",
+                  attrs: { to: "/portal/member", tag: "v-btn" }
+                },
                 [
                   _c("v-icon", [_vm._v("arrow_left")]),
                   _vm._v("\n        Back\n      ")
@@ -57149,7 +57155,10 @@ var render = function() {
             [
               _c(
                 "router-link",
-                { staticClass: "info", attrs: { to: "/member", tag: "v-btn" } },
+                {
+                  staticClass: "info",
+                  attrs: { to: "/portal/member", tag: "v-btn" }
+                },
                 [
                   _c("v-icon", [_vm._v("arrow_left")]),
                   _vm._v("\n        Back\n      ")
@@ -57473,7 +57482,7 @@ var render = function() {
             "v-card",
             {
               staticClass: "clickable",
-              attrs: { to: "/clients" },
+              attrs: { to: "/portal/clients" },
               nativeOn: {
                 click: function($event) {
                   return _vm.clients($event)
@@ -57550,7 +57559,7 @@ var render = function() {
             "v-card",
             {
               staticClass: "clickable",
-              attrs: { to: "/timelogs" },
+              attrs: { to: "/portal/timelogs" },
               nativeOn: {
                 click: function($event) {
                   return _vm.timelogs($event)
@@ -57627,7 +57636,7 @@ var render = function() {
             "v-card",
             {
               staticClass: "clickable",
-              attrs: { to: "/events" },
+              attrs: { to: "/portal/events" },
               nativeOn: {
                 click: function($event) {
                   return _vm.event($event)
@@ -57702,7 +57711,7 @@ var render = function() {
             "v-card",
             {
               staticClass: "clickable",
-              attrs: { to: "/calendar" },
+              attrs: { to: "/portal/calendar" },
               nativeOn: {
                 click: function($event) {
                   return _vm.calendar($event)
@@ -57775,7 +57784,7 @@ var render = function() {
             "v-card",
             {
               staticClass: "clickable",
-              attrs: { to: "/projects" },
+              attrs: { to: "/portal/projects" },
               nativeOn: {
                 click: function($event) {
                   return _vm.projects($event)
@@ -57848,7 +57857,7 @@ var render = function() {
             "v-card",
             {
               staticClass: "clickable",
-              attrs: { to: "/tasks" },
+              attrs: { to: "/portal/tasks" },
               nativeOn: {
                 click: function($event) {
                   return _vm.tasks($event)
@@ -57921,7 +57930,7 @@ var render = function() {
             "v-card",
             {
               staticClass: "clickable",
-              attrs: { to: "/notes" },
+              attrs: { to: "/portal/notes" },
               nativeOn: {
                 click: function($event) {
                   return _vm.notes($event)
@@ -57994,7 +58003,7 @@ var render = function() {
             "v-card",
             {
               staticClass: "clickable",
-              attrs: { to: "/tags" },
+              attrs: { to: "/portal/tags" },
               nativeOn: {
                 click: function($event) {
                   return _vm.tags($event)
@@ -58097,7 +58106,10 @@ var render = function() {
             [
               _c(
                 "router-link",
-                { staticClass: "info", attrs: { to: "/member", tag: "v-btn" } },
+                {
+                  staticClass: "info",
+                  attrs: { to: "/portal/member", tag: "v-btn" }
+                },
                 [
                   _c("v-icon", [_vm._v("arrow_left")]),
                   _vm._v("\n        Back\n      ")
@@ -58160,7 +58172,10 @@ var render = function() {
             [
               _c(
                 "router-link",
-                { staticClass: "info", attrs: { to: "/tasks", tag: "v-btn" } },
+                {
+                  staticClass: "info",
+                  attrs: { to: "/portal/tasks", tag: "v-btn" }
+                },
                 [
                   _c("v-icon", [_vm._v("arrow_left")]),
                   _vm._v("\n        Back\n      ")
@@ -58291,7 +58306,10 @@ var render = function() {
             [
               _c(
                 "router-link",
-                { staticClass: "info", attrs: { to: "/member", tag: "v-btn" } },
+                {
+                  staticClass: "info",
+                  attrs: { to: "/portal/member", tag: "v-btn" }
+                },
                 [
                   _c("v-icon", [_vm._v("arrow_left")]),
                   _vm._v("\n        Back\n      ")
@@ -58401,7 +58419,10 @@ var render = function() {
             [
               _c(
                 "router-link",
-                { staticClass: "info", attrs: { to: "/member", tag: "v-btn" } },
+                {
+                  staticClass: "info",
+                  attrs: { to: "/portal/member", tag: "v-btn" }
+                },
                 [
                   _c("v-icon", [_vm._v("arrow_left")]),
                   _vm._v("\n        Back\n      ")
@@ -58694,7 +58715,7 @@ var render = function() {
                   "text-decoration": "none",
                   color: "darkslategrey"
                 },
-                attrs: { to: "/" }
+                attrs: { to: "/portal" }
               },
               [_vm._v("Burns Web Services\n      ")]
             )
@@ -101494,28 +101515,28 @@ __webpack_require__.r(__webpack_exports__);
     path: '/',
     component: _components_Home__WEBPACK_IMPORTED_MODULE_0__["default"]
   }, {
-    path: '/member',
+    path: '/portal/member',
     component: _components_Member__WEBPACK_IMPORTED_MODULE_1__["default"]
   }, {
-    path: '/clients',
+    path: '/portal/clients',
     component: _components_Clients__WEBPACK_IMPORTED_MODULE_2__["default"]
   }, {
-    path: '/timelogs',
+    path: '/portal/timelogs',
     component: _components_TimeLog__WEBPACK_IMPORTED_MODULE_3__["default"]
   }, {
-    path: '/events',
+    path: '/portal/events',
     component: _components_Events__WEBPACK_IMPORTED_MODULE_4__["default"]
   }, {
-    path: '/calendar',
+    path: '/portal/calendar',
     component: _components_Calendar__WEBPACK_IMPORTED_MODULE_5__["default"]
   }, {
-    path: '/projects',
+    path: '/portal/projects',
     component: _components_Projects__WEBPACK_IMPORTED_MODULE_6__["default"]
   }, {
-    path: '/tasks',
+    path: '/portal/tasks',
     component: _components_Tasks__WEBPACK_IMPORTED_MODULE_7__["default"]
   }, {
-    path: '/task/:id?',
+    path: '/portal/task/:id?',
     component: _components_Task__WEBPACK_IMPORTED_MODULE_8__["default"],
     props: true
   }]

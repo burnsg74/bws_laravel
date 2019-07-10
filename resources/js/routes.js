@@ -16,35 +16,35 @@ export default {
       component: Home
     },
     {
-      path: '/member',
+      path: '/portal/member',
       component: Member
     },
     {
-      path: '/clients',
+      path: '/portal/clients',
       component: Clients
     },
     {
-      path: '/timelogs',
+      path: '/portal/timelogs',
       component: TimeLogs
     },
     {
-      path: '/events',
+      path: '/portal/events',
       component: Events
     },
     {
-      path: '/calendar',
+      path: '/portal/calendar',
       component: Calendar
     },
     {
-      path: '/projects',
+      path: '/portal/projects',
       component: Projects
     },
     {
-      path: '/tasks',
+      path: '/portal/tasks',
       component: Tasks
     },
     {
-      path: '/task/:id?',
+      path: '/portal/task/:id?',
       component: Task,
       props: true
     }

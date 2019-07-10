@@ -3,7 +3,7 @@
     <v-flex shrink
             pa-1>
       <h1>
-        <router-link to="/"
+        <router-link to="/portal"
                      style="text-decoration: none; color: darkslategrey;">Burns Web Services
         </router-link>
       </h1>

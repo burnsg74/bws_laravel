@@ -50,7 +50,7 @@ export default {
       axios.post('/api/login', {csrf: this.csrf, password: this.password, email: this.email}).then(function (response) {
         if (response.data.success === true) {
           vue.$store.commit('isLoggedin');
-          vue.$router.push('/member')
+          vue.$router.push('/portal/member')
         }
       }).catch(function (error) {
         console.log(error)

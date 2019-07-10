@@ -2,7 +2,7 @@
   <div>
     <v-layout row>
       <v-flex xs12>
-        <router-link to="/member"
+        <router-link to="/portal/member"
                      tag="v-btn"
                      class="info">
           <v-icon>arrow_left</v-icon>

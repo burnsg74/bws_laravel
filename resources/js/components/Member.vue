@@ -4,7 +4,7 @@
     <!-- Clients -->
     <v-flex xs2
             ma-2>
-      <v-card class="clickable" @click.native="clients"  to="/clients">
+      <v-card class="clickable" @click.native="clients"  to="/portal/clients">
         <v-layout row>
           <v-flex xs12
                   text-xs-center
@@ -31,7 +31,7 @@
     <!-- Time Logs -->
     <v-flex xs2
             ma-2>
-      <v-card class="clickable" @click.native="timelogs"  to="/timelogs">
+      <v-card class="clickable" @click.native="timelogs"  to="/portal/timelogs">
         <v-layout row>
           <v-flex xs12
                   text-xs-center
@@ -58,7 +58,7 @@
     <!-- Events -->
     <v-flex xs2
             ma-2>
-      <v-card class="clickable" @click.native="event"  to="/events">
+      <v-card class="clickable" @click.native="event"  to="/portal/events">
         <v-layout row>
           <v-flex xs12
                   text-xs-center
@@ -85,7 +85,7 @@
     <!-- Calendar -->
     <v-flex xs2
             ma-2>
-      <v-card class="clickable" @click.native="calendar"  to="/calendar">
+      <v-card class="clickable" @click.native="calendar"  to="/portal/calendar">
         <v-layout row>
           <v-flex xs12
                   text-xs-center
@@ -112,7 +112,7 @@
     <!-- Projects -->
     <v-flex xs2
             ma-2>
-      <v-card class="clickable" @click.native="projects"  to="/projects">
+      <v-card class="clickable" @click.native="projects"  to="/portal/projects">
         <v-layout row>
           <v-flex xs12
                   text-xs-center
@@ -139,7 +139,7 @@
     <!-- Tasks -->
     <v-flex xs2
             ma-2>
-      <v-card class="clickable" @click.native="tasks"  to="/tasks">
+      <v-card class="clickable" @click.native="tasks"  to="/portal/tasks">
         <v-layout row>
           <v-flex xs12
                   text-xs-center
@@ -166,7 +166,7 @@
     <!-- Notes -->
     <v-flex xs2
             ma-2>
-      <v-card class="clickable" @click.native="notes"  to="/notes">
+      <v-card class="clickable" @click.native="notes"  to="/portal/notes">
         <v-layout row>
           <v-flex xs12
                   text-xs-center
@@ -193,7 +193,7 @@
     <!-- Tags -->
     <v-flex xs2
             ma-2>
-      <v-card class="clickable" @click.native="tags"  to="/tags">
+      <v-card class="clickable" @click.native="tags"  to="/portal/tags">
         <v-layout row>
           <v-flex xs12
                   text-xs-center

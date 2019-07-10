@@ -2,7 +2,7 @@
   <div>
     <v-layout row>
       <v-flex xs2>
-        <router-link to="/tasks"
+        <router-link to="/portal/tasks"
                      tag="v-btn"
                      class="info">
           <v-icon>arrow_left</v-icon>
